@@ -98,12 +98,8 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ success: true });
-} catch (err) {
-  const error = err as Error;
-  console.error("Webhook error:", error);
-  return NextResponse.json(
-    { success: false, error: error.message },
-    { status: 500 }
-  );
+} catch (err: any) {
+  console.error("Webhook error:", err);
+  return NextResponse.json({ success: false, error: err.message }, { status: 500 });
 }
 }
