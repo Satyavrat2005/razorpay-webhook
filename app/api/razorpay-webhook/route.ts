@@ -9,6 +9,13 @@ const supabase = createClient(
 
 const WEBHOOK_SECRET = process.env.RAZORPAY_WEBHOOK_SECRET as string;
 
+export async function GET() {
+  return NextResponse.json({
+    status: "ok",
+    message: "Razorpay webhook endpoint is live ✅",
+  });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.text();
