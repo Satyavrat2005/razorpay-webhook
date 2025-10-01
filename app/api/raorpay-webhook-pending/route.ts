@@ -12,7 +12,7 @@ const WEBHOOK_SECRET = process.env.RAZORPAY_WEBHOOK_SECRET as string;
 export async function GET() {
   return NextResponse.json({
     status: "ok",
-    message: "Razorpay webhook for captured endpoint is live ✅",
+    message: "Razorpay webhook for pending payments endpoint is live ✅",
   });
 }
 
