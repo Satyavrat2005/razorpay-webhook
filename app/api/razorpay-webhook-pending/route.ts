@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
 
     const event = JSON.parse(body);
 
-    if (event.event === "payment.captured") {
+    if (event.event === "payment.failure") {
       const payment = event.payload.payment.entity;
 
       const name = payment.notes?.name || "Unknown";
